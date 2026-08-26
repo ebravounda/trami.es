@@ -10,12 +10,52 @@
   --tramilex-mint: #EEF7F1;
 }
 
-/* Fondos oscuros (cabecera, footer, secciones oscuras) */
-.bg-cello,
-.bg-cloud-burst,
-.rd-navbar-corporate-dark .rd-navbar-panel,
-.rd-navbar-corporate-dark .rd-navbar-nav-wrap,
+/* Tipografía de marca: Archivo (titulares, botones, menú) + Instrument Sans (cuerpo) */
+body {
+  font-family: 'Instrument Sans', Helvetica, Arial, sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6,
+.btn, .rd-navbar-nav > li > a, .slider-header, .font-accent {
+  font-family: 'Archivo', Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  letter-spacing: -0.01em;
+}
+
+/* ------------------------------------------------------------------ */
+/* Barra superior de utilidad (dirección / email / teléfono): oscura   */
+/* ------------------------------------------------------------------ */
 .rd-navbar-aside-content {
+  background: var(--tramilex-ink) !important;
+}
+
+/* Barra principal de navegación: limpia, clara, con el logo a color   */
+.rd-navbar-panel,
+.rd-navbar-nav-wrap {
+  background: #fff !important;
+}
+
+.rd-navbar-panel {
+  box-shadow: 0 1px 0 rgba(14, 63, 56, 0.08);
+}
+
+.rd-navbar-nav > li > a:hover,
+.rd-navbar-nav > li.focus > a,
+.rd-navbar-nav > li.active > a {
+  color: var(--tramilex-emerald) !important;
+}
+
+.rd-navbar-dropdown {
+  border-radius: 6px;
+  box-shadow: 0 18px 40px rgba(14, 63, 56, 0.16);
+  border-top: 3px solid var(--tramilex-emerald);
+}
+
+/* Fondos oscuros (footer y secciones oscuras de contenido) */
+.bg-cello,
+.bg-cloud-burst {
   background: var(--tramilex-ink) !important;
   fill: var(--tramilex-ink) !important;
 }
@@ -35,6 +75,8 @@
   color: #fff !important;
   background-color: var(--tramilex-emerald) !important;
   border-color: var(--tramilex-emerald) !important;
+  box-shadow: 0 8px 20px rgba(46, 157, 99, 0.28);
+  transition: .25s ease-out;
 }
 
 .btn-primary:hover,
@@ -42,6 +84,16 @@
   background-color: var(--tramilex-emerald-light) !important;
   border-color: var(--tramilex-emerald-light) !important;
   color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(46, 157, 99, 0.34);
+}
+
+.btn-silver-outline {
+  transition: .25s ease-out;
+}
+
+.btn-silver-outline:hover {
+  transform: translateY(-2px);
 }
 
 .bg-primary {
@@ -67,7 +119,41 @@
   color: var(--tramilex-emerald) !important;
 }
 
-/* Logo de cabecera: imagen alta, ajustar altura sin recorte */
+/* Imágenes de contenido: esquinas suaves para un acabado más cuidado */
+.container img.w-100 {
+  border-radius: 8px;
+}
+
+/* Tarjetas de "check" — alternativa clara a los bloques oscuros de lista */
+.tramilex-check-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.tramilex-check-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: #fff;
+  border: 1px solid rgba(14, 63, 56, 0.1);
+  border-radius: 8px;
+  padding: 20px 22px;
+  box-shadow: 0 6px 18px rgba(14, 63, 56, 0.06);
+}
+
+.tramilex-check-card .icon {
+  flex: 0 0 auto;
+  color: var(--tramilex-emerald);
+  margin-top: 2px;
+}
+
+.tramilex-check-card p {
+  margin: 0;
+  color: #4b5a57;
+}
+
+/* Logos */
 .brand img {
   height: 58px;
   width: auto;
@@ -75,7 +161,7 @@
 }
 
 .rd-navbar-brand img {
-  height: 40px;
+  height: 42px;
   width: auto;
   max-width: none;
 }
@@ -97,7 +183,7 @@
   padding-bottom: 66%;
   height: 0;
   overflow: hidden;
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 .tramilex-map-wrap iframe {
