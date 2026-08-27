@@ -797,3 +797,27 @@ h1.tramilex-heading-balanced {
   40% { transform: scale(1); }
   60% { transform: scale(1.15); }
 }
+
+/* Icono(s) de redes sociales en la primera columna del pie de página. */
+.tramilex-social {
+  display: flex;
+  gap: 10px;
+}
+
+.tramilex-social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 16px;
+  transition: .25s ease-out;
+}
+
+.tramilex-social-icon:hover {
+  background: var(--tramilex-emerald);
+  color: #fff;
+}
