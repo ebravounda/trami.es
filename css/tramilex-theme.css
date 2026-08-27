@@ -681,3 +681,48 @@ h1.tramilex-heading-balanced {
   color: var(--tramilex-ink);
   box-shadow: 0 4px 12px rgba(14, 63, 56, 0.12);
 }
+
+/* Bloque "Lo que hacemos" (empresa.html) y similares: cifras destacadas
+   y chips de países, para romper el muro de texto con algo más visual. */
+.tramilex-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.tramilex-stat-num {
+  font-family: 'Archivo', Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  font-size: 2.4rem;
+  line-height: 1;
+  color: var(--tramilex-emerald);
+}
+
+.tramilex-stat-label {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #4b5a57;
+}
+
+.tramilex-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.tramilex-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--tramilex-mint);
+  color: var(--tramilex-ink);
+  font-family: 'Archivo', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.tramilex-pill .icon {
+  color: var(--tramilex-emerald);
+}
