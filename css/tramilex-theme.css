@@ -177,8 +177,9 @@ h1.tramilex-heading-balanced {
 
 .tramilex-check-card {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 14px;
+  min-height: 96px;
   background: #fff;
   border: 1px solid rgba(14, 63, 56, 0.1);
   border-radius: 8px;
