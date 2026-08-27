@@ -24,6 +24,15 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   letter-spacing: -0.01em;
 }
 
+/* El H1 de la plantilla escala hasta 104px en pantallas grandes: para un
+   titular de sección (no una portada a pantalla completa) resulta
+   desproporcionado frente al resto del contenido. Se limita a un tamaño
+   más armonioso, en línea con el resto de titulares del sitio. */
+h1.tramilex-heading-balanced {
+  font-size: clamp(2rem, 1.3rem + 2.6vw, 3.05rem) !important;
+  line-height: 1.15 !important;
+}
+
 /* ------------------------------------------------------------------ */
 /* Barra superior de utilidad (dirección / email / teléfono): oscura   */
 /* ------------------------------------------------------------------ */
@@ -134,11 +143,36 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   width: 100%;
 }
 
+
 /* Tarjetas de "check" — alternativa clara a los bloques oscuros de lista */
 .tramilex-check-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
+}
+
+/* En pantallas grandes se fuerzan 4 columnas: con auto-fit el número de
+   columnas depende del ancho exacto del contenedor y puede repartir las
+   tarjetas de forma desigual (p. ej. 5+3); con 4 columnas fijas, 8
+   tarjetas siempre forman una rejilla 4×2 perfectamente ordenada. */
+@media (min-width: 992px) {
+  .tramilex-check-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .tramilex-check-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Modificador para listas más cortas (4-6 elementos), donde 2 columnas
+   forman una rejilla completa en vez de dejar una tarjeta huérfana. */
+@media (min-width: 576px) {
+  .tramilex-check-grid.tramilex-check-grid--2col {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .tramilex-check-card {
@@ -171,7 +205,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .rd-navbar-brand img {
-  height: 42px;
+  height: 52px;
   width: auto;
   max-width: none;
 }
@@ -618,4 +652,31 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .tramilex-toggle-btn.is-closed {
   border-color: #b3261e;
   color: #b3261e;
+}
+
+.tramilex-admin-tabs {
+  display: inline-flex;
+  gap: 6px;
+  background: #f4f6f5;
+  border-radius: 999px;
+  padding: 4px;
+}
+
+.tramilex-admin-tab {
+  border: 0;
+  background: transparent;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-family: 'Archivo', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: #4b5a57;
+  cursor: pointer;
+  transition: .2s ease-out;
+}
+
+.tramilex-admin-tab.is-active {
+  background: #fff;
+  color: var(--tramilex-ink);
+  box-shadow: 0 4px 12px rgba(14, 63, 56, 0.12);
 }
