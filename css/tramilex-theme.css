@@ -734,3 +734,27 @@ h1.tramilex-heading-balanced {
   margin-top: 6px;
   border-top: 1px solid rgba(14, 63, 56, 0.1);
 }
+
+/* Botón "Portal Clientes" dentro del menú principal: es un <li> normal
+   de la lista (no un elemento ajeno insertado en el contenedor flex del
+   plugin de navegación), solo que su enlace se pinta como una píldora. */
+.rd-navbar-nav > li > a.tramilex-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 20px !important;
+  border-radius: 999px;
+  background: var(--tramilex-emerald);
+  color: #fff !important;
+  transition: .25s ease-out;
+}
+
+.rd-navbar-nav > li > a.tramilex-nav-btn:hover {
+  background: var(--tramilex-emerald-light);
+  color: #fff !important;
+}
+
+@media (max-width: 991.98px) {
+  .rd-navbar-nav > li > a.tramilex-nav-btn {
+    display: inline-flex;
+  }
+}
