@@ -45,6 +45,14 @@ h1.tramilex-heading-balanced {
   display: none !important;
 }
 
+/* En el layout fijo (móvil/tablet) el "aside" es un desplegable que solo
+   se muestra al pulsar su botón; como ese botón queda oculto (arriba),
+   el aside nunca podría abrirse y quedaba como una barra oscura vacía y
+   fija sobre la cabecera, tapando parte del logo. Se oculta del todo. */
+.rd-navbar-fixed .rd-navbar-aside {
+  display: none !important;
+}
+
 /* Barra principal de navegación: limpia, clara, con el logo a color   */
 .rd-navbar-panel,
 .rd-navbar-nav-wrap {
@@ -59,6 +67,17 @@ h1.tramilex-heading-balanced {
 .rd-navbar-nav > li.focus > a,
 .rd-navbar-nav > li.active > a {
   color: var(--tramilex-emerald) !important;
+}
+
+/* En el menú desplegable móvil (layout "fijo") la plantilla resalta el
+   elemento activo/enfocado con un bloque de fondo verde lima; se sustituye
+   por el esmeralda de la marca para que sea coherente con el resto. */
+.rd-navbar-fixed .rd-navbar-nav li:hover > a,
+.rd-navbar-fixed .rd-navbar-nav li.focus > a,
+.rd-navbar-fixed .rd-navbar-nav li.active > a,
+.rd-navbar-fixed .rd-navbar-nav li.opened > a {
+  background: var(--tramilex-emerald) !important;
+  color: #fff !important;
 }
 
 .rd-navbar-dropdown {
