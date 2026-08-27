@@ -777,3 +777,23 @@ h1.tramilex-heading-balanced {
     display: inline-flex;
   }
 }
+
+/* Línea de crédito del pie de página, bajo el "© Tramilex". El corazón
+   "late" con una pequeña animación de escala en bucle. */
+.tramilex-credit {
+  display: block;
+  margin-top: 4px;
+}
+
+.tramilex-heart {
+  display: inline-block;
+  color: #e8556a;
+  animation: tramilex-heartbeat 1.2s ease-in-out infinite;
+}
+
+@keyframes tramilex-heartbeat {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.25); }
+  40% { transform: scale(1); }
+  60% { transform: scale(1.15); }
+}
