@@ -726,3 +726,11 @@ h1.tramilex-heading-balanced {
 .tramilex-pill .icon {
   color: var(--tramilex-emerald);
 }
+
+/* Separa visualmente un botón del texto que lo precede en vez de dejarlo
+   pegado justo debajo del último párrafo. */
+.tramilex-cta-divider {
+  padding-top: 26px;
+  margin-top: 6px;
+  border-top: 1px solid rgba(14, 63, 56, 0.1);
+}
