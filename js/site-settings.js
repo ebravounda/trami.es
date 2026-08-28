@@ -11,8 +11,15 @@
 
         var height = data.logo_height;
         if (height) {
+          // En móvil (layout "fijo") la cabecera mide 56px de alto: una
+          // altura de logo mayor que la que ya viene por defecto (52px)
+          // no cabría entera, así que en móvil se limita a como mucho eso
+          // y se respeta el valor elegido tal cual en el escritorio.
+          var mobileHeight = Math.min(height, 52);
           var style = document.createElement('style');
-          style.textContent = '.rd-navbar-brand img { height: ' + height + 'px !important; }';
+          style.textContent =
+            '.rd-navbar-brand img { height: ' + height + 'px !important; }' +
+            '@media (max-width: 991.98px) { .rd-navbar-brand img { height: ' + mobileHeight + 'px !important; } }';
           document.head.appendChild(style);
         }
 

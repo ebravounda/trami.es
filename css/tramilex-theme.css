@@ -53,6 +53,19 @@ h1.tramilex-heading-balanced {
   display: none !important;
 }
 
+/* La cabecera móvil ("layout fijo") es una barra de 56px de alto. La
+   plantilla base posiciona el logo con "top: 16px" y sin alto propio, así
+   que si el logo mide más de ~40px (por ejemplo, tras subir uno nuevo o
+   subir la altura desde el panel de administración) se sale por debajo de
+   la barra blanca y queda flotando sobre el contenido. Al fijarle el alto
+   completo de la barra y centrar con flex, el "overflow: hidden" que ya
+   trae la plantilla recorta cualquier logo demasiado alto en vez de
+   dejarlo desbordar. */
+.rd-navbar-fixed .rd-navbar-brand {
+  top: 0;
+  height: 56px;
+}
+
 /* Barra principal de navegación: limpia, clara, con el logo a color   */
 .rd-navbar-panel,
 .rd-navbar-nav-wrap {
