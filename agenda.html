@@ -2,7 +2,7 @@
 <html class="#{html_class}" lang="es">
   <head>
     <title>Agenda tu Cita Online con Tramilex | Visados y Extranjería</title>
-    <meta name="description" content="Reserva online tu cita de 45 minutos con nuestros expertos en visados y extranjería. Elige el día y la hora que prefieras, de 09:00 a 20:00.">
+    <meta name="description" content="Reserva online tu cita con nuestros expertos en visados y extranjería. Elige el día y la hora que prefieras desde nuestro calendario.">
     <link rel="canonical" href="https://tramilex.es/agenda.html">
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -15,13 +15,13 @@
     <meta property="og:locale" content="es_ES">
     <meta property="og:url" content="https://tramilex.es/agenda.html">
     <meta property="og:title" content="Agenda tu Cita Online con Tramilex | Visados y Extranjería">
-    <meta property="og:description" content="Reserva online tu cita de 45 minutos con nuestros expertos en visados y extranjería. Elige el día y la hora que prefieras, de 09:00 a 20:00.">
+    <meta property="og:description" content="Reserva online tu cita con nuestros expertos en visados y extranjería. Elige el día y la hora que prefieras desde nuestro calendario.">
     <meta property="og:image" content="https://tramilex.es/images/og/tramilex-social-share.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Agenda tu Cita Online con Tramilex | Visados y Extranjería">
-    <meta name="twitter:description" content="Reserva online tu cita de 45 minutos con nuestros expertos en visados y extranjería. Elige el día y la hora que prefieras, de 09:00 a 20:00.">
+    <meta name="twitter:description" content="Reserva online tu cita con nuestros expertos en visados y extranjería. Elige el día y la hora que prefieras desde nuestro calendario.">
     <meta name="twitter:image" content="https://tramilex.es/images/og/tramilex-social-share.png">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Archivo:400,500,600,700%7CInstrument+Sans:400,500,600,700">
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -260,27 +260,17 @@
         <div class="container">
           <div class="page-title">
             <h1>Agenda tu cita</h1>
-            <p class="text-white offset-top-10">Elige el día y la hora que mejor te vengan. Cada cita dura 45 minutos.</p>
+            <p class="text-white offset-top-10">Elige el día y la hora que mejor te vengan.</p>
           </div>
         </div>
       </section>
 
       <section class="section-60 section-md-90">
         <div class="container">
-          <div class="tramilex-booking">
-            <div class="tramilex-cal">
-              <div class="tramilex-cal-head">
-                <button type="button" class="tramilex-cal-nav" id="tramilex-cal-prev" aria-label="Mes anterior">&#8249;</button>
-                <h5 id="tramilex-cal-title"><span class="tramilex-step-label">1</span></h5>
-                <button type="button" class="tramilex-cal-nav" id="tramilex-cal-next" aria-label="Mes siguiente">&#8250;</button>
-              </div>
-              <div class="tramilex-cal-grid" id="tramilex-cal-grid"></div>
-              <p class="text-bismark offset-top-15" style="color:#6b7c78;">Horario: de 09:00 a 20:00, de lunes a domingo. El punto naranja indica un día sin disponibilidad.</p>
-            </div>
-            <div class="tramilex-slots-panel" id="tramilex-slots-panel">
-              <p class="text-gray-base-05">Elige un día disponible en el calendario para ver las horas.</p>
-            </div>
+          <div class="tramilex-booking-iframe-wrap">
+            <iframe src="https://tramilex.goroky.es/citas/reservar" title="Agenda tu cita - Tramilex" loading="lazy"></iframe>
           </div>
+          <p class="tramilex-booking-fallback">¿No ves el calendario? <a class="link-primary fw-sbold" href="https://tramilex.goroky.es/citas/reservar" target="_blank" rel="noopener">Ábrelo en una pestaña nueva</a>.</p>
         </div>
       </section>
 
@@ -381,6 +371,6 @@
     <script src="js/script.js"></script>
     <script src="js/reveal.js"></script>
     <script src="js/site-settings.js"></script>
-    <script src="js/agenda.js"></script>
+    
   </body>
 </html>

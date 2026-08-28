@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /bat/
-Disallow: /admin-citas.html
+Disallow: /admin.html
 
 Sitemap: https://tramilex.es/sitemap.xml

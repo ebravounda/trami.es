@@ -401,162 +401,51 @@ h1.tramilex-heading-balanced {
 }
 
 /* ------------------------------------------------------------------ */
-/* Calendario de citas (agenda.html)                                    */
+/* Agenda tu cita (agenda.html) — iframe del sistema externo de citas   */
 /* ------------------------------------------------------------------ */
-.tramilex-booking {
-  display: grid;
-  grid-template-columns: minmax(280px, 380px) 1fr;
-  gap: 40px;
-  align-items: start;
+.tramilex-booking-iframe-wrap {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(14, 63, 56, 0.1);
+  box-shadow: 0 10px 28px rgba(14, 63, 56, 0.08);
+  background: #fff;
 }
 
-@media (max-width: 991px) {
-  .tramilex-booking {
-    grid-template-columns: 1fr;
+.tramilex-booking-iframe-wrap iframe {
+  display: block;
+  width: 100%;
+  height: 85vh;
+  min-height: 700px;
+  max-height: 1100px;
+  border: 0;
+}
+
+@media (max-width: 767.98px) {
+  .tramilex-booking-iframe-wrap iframe {
+    height: 80vh;
+    min-height: 620px;
   }
 }
 
-.tramilex-cal {
-  background: #fff;
-  border: 1px solid rgba(14, 63, 56, 0.1);
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 10px 28px rgba(14, 63, 56, 0.08);
-}
-
-.tramilex-cal-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 14px;
-}
-
-.tramilex-cal-head h5 {
-  margin: 0;
-  text-transform: capitalize;
-}
-
-.tramilex-cal-nav {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 1px solid rgba(14, 63, 56, 0.15);
-  background: #fff;
-  cursor: pointer;
-  color: var(--tramilex-ink);
-  transition: .2s ease-out;
-}
-
-.tramilex-cal-nav:hover {
-  background: var(--tramilex-mint);
-}
-
-.tramilex-cal-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 4px;
+.tramilex-booking-fallback {
   text-align: center;
-}
-
-.tramilex-cal-dow {
-  font-size: 11px;
-  text-transform: uppercase;
-  color: #9aa8a4;
-  font-weight: 700;
-  padding-bottom: 6px;
-}
-
-.tramilex-cal-day {
-  position: relative;
-  aspect-ratio: 1 / 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  border: 1px solid transparent;
-  background: transparent;
+  margin-top: 16px;
   font-size: 14px;
-  cursor: pointer;
-  color: #263936;
-  transition: .15s ease-out;
+  color: #6b7c78;
 }
 
-.tramilex-cal-day:hover:not(:disabled) {
-  background: var(--tramilex-mint);
-}
-
-.tramilex-cal-day:disabled {
-  color: #c7d1ce;
-  cursor: not-allowed;
-}
-
-.tramilex-cal-day.is-selected {
-  background: var(--tramilex-emerald);
-  color: #fff !important;
-}
-
-.tramilex-cal-day.is-full:not(.is-selected)::after {
-  content: '';
-  position: absolute;
-  bottom: 4px;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: #d98c3f;
-}
-
-.tramilex-cal-empty {
-  visibility: hidden;
-}
-
-.tramilex-slots-panel {
+/* ------------------------------------------------------------------ */
+/* Panel de administración (admin.html)                                 */
+/* ------------------------------------------------------------------ */
+.tramilex-admin-login {
+  max-width: 380px;
+  margin: 0 auto;
   background: #fff;
   border: 1px solid rgba(14, 63, 56, 0.1);
   border-radius: 10px;
-  padding: 28px;
+  padding: 34px;
   box-shadow: 0 10px 28px rgba(14, 63, 56, 0.08);
-  min-height: 260px;
-}
-
-.tramilex-slots-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
-  gap: 10px;
-  margin-top: 18px;
-}
-
-.tramilex-slot-btn {
-  padding: 10px 8px;
-  border-radius: 8px;
-  border: 1px solid rgba(14, 63, 56, 0.18);
-  background: #fff;
-  font-family: 'Archivo', Helvetica, Arial, sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  color: var(--tramilex-ink);
-  cursor: pointer;
-  transition: .15s ease-out;
-}
-
-.tramilex-slot-btn:hover:not(:disabled) {
-  border-color: var(--tramilex-emerald);
-  color: var(--tramilex-emerald);
-}
-
-.tramilex-slot-btn.is-selected {
-  background: var(--tramilex-emerald);
-  border-color: var(--tramilex-emerald);
-  color: #fff;
-}
-
-.tramilex-slot-btn:disabled {
-  background: #f4f6f5;
-  color: #c7d1ce;
-  cursor: not-allowed;
-  text-decoration: line-through;
 }
 
 .tramilex-booking-status {
@@ -574,131 +463,6 @@ h1.tramilex-heading-balanced {
 .tramilex-booking-status.is-success {
   background: #e9f7ef;
   color: #1e7a46;
-}
-
-.tramilex-step-label {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: var(--tramilex-emerald);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 700;
-  margin-right: 8px;
-}
-
-/* ------------------------------------------------------------------ */
-/* Panel de administración de citas (admin-citas.html)                  */
-/* ------------------------------------------------------------------ */
-.tramilex-admin-login {
-  max-width: 380px;
-  margin: 0 auto;
-  background: #fff;
-  border: 1px solid rgba(14, 63, 56, 0.1);
-  border-radius: 10px;
-  padding: 34px;
-  box-shadow: 0 10px 28px rgba(14, 63, 56, 0.08);
-}
-
-.tramilex-admin-day {
-  border: 1px solid rgba(14, 63, 56, 0.12);
-  border-radius: 8px;
-  padding: 10px 6px;
-  text-align: center;
-  cursor: pointer;
-  transition: .15s ease-out;
-  background: #fff;
-}
-
-.tramilex-admin-day .num {
-  font-family: 'Archivo', Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  display: block;
-}
-
-.tramilex-admin-day .count {
-  display: block;
-  font-size: 11px;
-  color: #6b7c78;
-  margin-top: 2px;
-}
-
-.tramilex-admin-day.is-closed {
-  background: #fdecea;
-  border-color: #f2c6c2;
-}
-
-.tramilex-admin-day.is-closed .num {
-  color: #b3261e;
-}
-
-.tramilex-admin-day.is-selected {
-  outline: 2px solid var(--tramilex-emerald);
-}
-
-.tramilex-admin-day.is-past {
-  opacity: .4;
-  cursor: default;
-}
-
-.tramilex-admin-appt-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 12px 0;
-  border-bottom: 1px solid rgba(14, 63, 56, 0.08);
-}
-
-.tramilex-admin-appt-row:last-child {
-  border-bottom: 0;
-}
-
-.tramilex-toggle-btn {
-  padding: 8px 16px;
-  border-radius: 999px;
-  border: 1px solid var(--tramilex-emerald);
-  background: #fff;
-  color: var(--tramilex-emerald);
-  font-weight: 700;
-  font-size: 13px;
-  cursor: pointer;
-  transition: .2s ease-out;
-}
-
-.tramilex-toggle-btn.is-closed {
-  border-color: #b3261e;
-  color: #b3261e;
-}
-
-.tramilex-admin-tabs {
-  display: inline-flex;
-  gap: 6px;
-  background: #f4f6f5;
-  border-radius: 999px;
-  padding: 4px;
-}
-
-.tramilex-admin-tab {
-  border: 0;
-  background: transparent;
-  padding: 8px 18px;
-  border-radius: 999px;
-  font-family: 'Archivo', Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-size: 13px;
-  color: #4b5a57;
-  cursor: pointer;
-  transition: .2s ease-out;
-}
-
-.tramilex-admin-tab.is-active {
-  background: #fff;
-  color: var(--tramilex-ink);
-  box-shadow: 0 4px 12px rgba(14, 63, 56, 0.12);
 }
 
 /* Bloque "Lo que hacemos" (empresa.html) y similares: cifras destacadas

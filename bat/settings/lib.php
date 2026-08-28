@@ -1,11 +1,30 @@
 <?php
 /**
- * Ajustes generales del sitio (por ahora: logo de cabecera y su altura).
- * Reutiliza la misma sesión de administrador que el calendario de citas
- * (bat/citas/admin_login.php) para no tener que mantener dos logins.
+ * Ajustes generales del sitio (por ahora: logo de cabecera y su altura),
+ * más el login del panel de administración privado.
+ *
+ * No hay base de datos: se usa un único fichero JSON (bat/settings/data/settings.json).
  */
 
-require_once __DIR__ . '/../citas/lib.php'; // aporta citas_json_response(), citas_error() y la sesión
+require_once __DIR__ . '/config.php';
+
+function settings_json_response($data, $status = 200) {
+    http_response_code($status);
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode($data, JSON_UNESCAPED_UNICODE);
+    exit;
+}
+
+function settings_error($message, $status = 400) {
+    settings_json_response(['ok' => false, 'error' => $message], $status);
+}
+
+function settings_require_admin() {
+    if (session_status() !== PHP_SESSION_ACTIVE) session_start();
+    if (empty($_SESSION['tramilex_admin'])) {
+        settings_error('No has iniciado sesión.', 401);
+    }
+}
 
 define('SETTINGS_DATA_FILE', __DIR__ . '/data/settings.json');
 define('SETTINGS_UPLOAD_DIR', __DIR__ . '/../../images/brand/uploads');
@@ -32,8 +51,4 @@ function settings_load() {
 function settings_save($data) {
     $data = $data + settings_defaults();
     file_put_contents(SETTINGS_DATA_FILE, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE), LOCK_EX);
-}
-
-function settings_require_admin() {
-    citas_require_admin();
 }
